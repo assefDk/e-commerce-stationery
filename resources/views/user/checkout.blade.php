@@ -134,18 +134,26 @@ $("#orderForm").submit(function(event){
             event.preventDefault();
 
             $.ajax({
-                url: '{{ route("user.processCheckout") }}',
+                url: '{{ route("user.processCheckout") }}', 
                 type: 'post',
                 data: $(this).serializeArray(),
                 dataType: 'json',
                 success: function(response){
 
-                    console.log(response);
                     var errors = response.errors;
                     // $('button[type="submit"]').prop('disabled',false);
+                    
 
-                    if(response.status == false){
- 
+
+                    if(response.status == true){
+                        showSuccessMessage('تمت إضافة الطلب بنجاح');
+
+                        setTimeout(function() {
+                            window.location.href = '{{ route("user.home") }}';
+                        }, 2000);
+                    }else{
+                        console.log(response);
+    
                         if(errors.address){
                             $("#address").addClass('input-error')
                                 .siblings("p")
@@ -157,7 +165,7 @@ $("#orderForm").submit(function(event){
                                 .removeClass('error-message')
                                 .html('');
                         }
-
+    
                         if(errors.phone){
                             $("#phone").addClass('input-error')
                                 .siblings("p")
@@ -169,13 +177,9 @@ $("#orderForm").submit(function(event){
                                 .removeClass('error-message')
                                 .html('');
                         }
-                    }else{
 
-                        
-                        // window.location.href = "{{ url('/thanks/') }}/"+response.orderId;
+                    }
 
-                    } 
- 
                 }
 
             });

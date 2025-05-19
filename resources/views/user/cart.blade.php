@@ -119,7 +119,7 @@
                      
                   </div>
                </div>
-               <div class="col-md-12 pt-4 pb-4">
+               <div class="col-md-12 pt-4 pb-4">   
                      <a href="{{ route('user.checkout') }}" class="btn btn-success check-out">
                         Check Out
                      </a>

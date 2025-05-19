@@ -164,7 +164,7 @@ class CartController extends Controller
         }
 
         $coustomer =  User::where('id',Auth::user()->id)->first();
-        session()->forget('url.intended');
+        // session()->forget('url.intended');
 
         return view("user.checkout",compact('coustomer'));
     }

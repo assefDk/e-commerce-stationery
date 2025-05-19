@@ -4,7 +4,7 @@
  <header id="header" class="header fixed-top d-flex align-items-center">
 
     <div class="d-flex align-items-center justify-content-between">
-      <a href="index.html" class="logo d-flex align-items-center">
+      <a href="{{route('admin.dashbord')}}" class="logo d-flex align-items-center">
         <span class="d-none d-lg-block">Admin Management</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
@@ -28,12 +28,7 @@
               <hr class="dropdown-divider">
             </li>
 
-            <li>
-              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
-                <i class="bi bi-person"></i>
-                <span>My Profile</span>
-              </a>
-            </li>
+           
             <li>
               <hr class="dropdown-divider">
             </li>

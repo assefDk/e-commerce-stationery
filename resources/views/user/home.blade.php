@@ -156,7 +156,15 @@
 @section('customJs')
 
     <script>
-       
+        
+
+        
+
+
+
+
+
+
     </script>
 @endsection
 
